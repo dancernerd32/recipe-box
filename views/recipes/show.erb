@@ -1,0 +1,19 @@
+<h1><%=@this_recipe['recipe_name']%></h1>
+<%@description.each do |paragraph|%>
+  <p><%=paragraph%></p>
+<%end%>
+
+<h2>Ingredients</h2>
+<ul>
+<%@recipe.each do |recipe|%>
+<li><%=recipe['ingredients']%></li>
+<%end%>
+</ul>
+
+<h2>Instructions</h2>
+<h4><%=@instruction_title%></h4>
+<%@instructions.each_with_index do |step, index|%>
+  <%if index != 1%>
+    <p><%=step%></p>
+    <%end%>
+<%end%>
